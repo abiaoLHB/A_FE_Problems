@@ -7,4 +7,19 @@
 >> var url = window.location.href.split('#')[0]
 >> var splitUtl = encodeURIComponent(url)
 >> var linkUrl = url
+>> // 可以
+>> // var splitUtl = encodeURIComponent(window.location.href.split('#')[0])
+>> // var linkUrl = window.location.href.split('#')[0]
+>>
+>> // 测试连续转发 第一次分享成功，打开分享链接继续转发，签名失败
+>> // var splitUtl = encodeURIComponent(window.location.href.split('#')[0])
+>> // var linkUrl = splitUtl
+>>          
+>> // 测试连续转发 第一次分享成功，打开分享链接继续转发，签名失败
+>> // var splitUtl = window.location.href.split('#')[0]
+>> // var linkUrl = encodeURIComponent(window.location.href.split('#')[0])
+>>
+>> // 写死link地址 连续转发可以，但是如果转发地址带参数的话，参数会丢。
+>> // var splitUtl = encodeURIComponent(window.location.href.split('#')[0])
+>> // var linkUrl = shareLink
 >> ```
