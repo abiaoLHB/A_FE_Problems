@@ -23,3 +23,10 @@
 >> // var splitUtl = encodeURIComponent(window.location.href.split('#')[0])
 >> // var linkUrl = shareLink
 >> ```
+
+
+> ### 小程序因为wx:key警告问题
+>> - 描述：微信小程序在2.2.3版本中，用wx:key=-"{{item.id}}"没问题，在3.0.0版本中再用都是警告：wx:key="" does not look like a valid key name.
+>> - 解决方案：不要再用模板语法了，使用字符串就行
+>> ```js
+>> wx:key="ipId"
