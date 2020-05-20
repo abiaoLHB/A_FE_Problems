@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .sanjiao {
+            width: 0;
+            height: 0;
+            margin: 100px auto;
+            border-top: 50px solid blue;
+            border-left: 50px solid orange;
+            border-right: 50px solid yellow;
+            border-bottom: 50px solid red;
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="sanjiao"></div>
+
     <script>
         var str = 'input_your_name'
         console.log(str)
@@ -31,6 +45,38 @@
                 return newName
             }
         }
+    </script>
+
+    <script>
+        // 大小写翻转
+        (function () {
+            var str = "fjKFAzp"
+            console.log(coverCase(str))
+            function coverCase(str) {
+                var newStr = ''
+                if (!str) {
+                    console.log("请输入字符串")
+                } else {
+                    for (var i = 0; i < str.length; i++) {
+                        console.log(str.charCodeAt(i))
+                        newStr += ((str.charCodeAt(i) > 96 && str.substr(i, 1).toUpperCase()) || str.substr(i, 1).toLowerCase());
+                    }
+                }
+                return newStr
+            }
+        })();
+        // 大小写翻转2
+        (function () {
+            var str2 = 'abcdefgABCDEFG'
+            console.log(caseConvert(str2))
+            function caseConvert(str) {
+                return str.replace(/([a-z]*)([A-Z]*)/g, (m, s1, s2) => {
+                    return `${s1.toUpperCase()}${s2.toLowerCase()}`
+                })
+            }
+            caseConvert('AsA33322A2aa') //aSa33322a2AA
+        })();
+
     </script>
 </body>
 
