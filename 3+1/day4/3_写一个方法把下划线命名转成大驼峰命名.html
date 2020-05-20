@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'input_your_name'
+        console.log(str)
+        console.log(changeLine(str))
+        function changeLine(str) {
+            if (typeof str !== 'string') {
+                alert('请确认要删除的对象为字符串！');
+            } else {
+                var newName = '';
+                var arr = str.split('_');
+
+                arr.map(function (item, index, array) {
+                    if (index == 0) {
+                        newName = item
+                    } else {
+                        newName += item.substr(0, 1).toUpperCase() + item.substr(1)
+                    }
+                })
+
+                return newName
+            }
+        }
+    </script>
+</body>
+
+</html>
