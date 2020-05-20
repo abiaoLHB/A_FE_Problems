@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>算法</title>
+</head>
+
+<body>
+    <!-- <div>
+        这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）：
+        a) 生成一个长度为5的空数组arr。
+        b) 生成一个（2－32）之间的随机整数rand。
+        c) 把随机数rand插入到数组arr内，如果数组arr内已存在与rand相同的数字，则重新生成随机数rand并插入到arr内[需要使用递归实现，不能使用for/while等循环]
+        d) 最终输出一个长度为5，且内容不重复的数组arr。
+    </div> -->
+
+    <script>
+        var array = new Array(5)
+        // Math.floor(1.6) 返回小于等于x的最大整数。输出1 （不要小数点后面）
+        var randomNumber = getRandomNumber()
+        var i = 0
+        arrayPushItem(array, randomNumber)
+        console.log(array)
+
+        function getRandomNumber() {
+            return 2 + Math.floor(Math.random() * 30)
+        }
+        function arrayPushItem(array, randomNumber) {
+            if (array.indexOf(randomNumber) != -1) {
+                randomNumber = getRandomNumber()
+            } else {
+                array[i] = randomNumber
+                i++
+                randomNumber = getRandomNumber()
+                if (i == array.length) {
+                    return array
+                } else {
+                    arrayPushItem(array, randomNumber)
+                }
+            }
+        }
+    </script>
+
+    <script>
+        (function () {
+            console.log('改进版-知道值了，也需要递归')
+            var array = new Array(5)
+            var i = 0
+            var randNumber = getRandNumber()
+            getArray(array, randNumber)
+            console.log(array)
+            function getRandNumber() {
+                return 2 + Math.floor(Math.random() * 30)
+            }
+            function getArray(array, randNumber) {
+                if (array.indexOf(randNumber) != -1) {
+                    randNumber = getRandNumber()
+                    getArray(array, randNumber)
+                } else {
+                    array[i] = randNumber
+                    i++
+                    if (i == array.length) {
+                        return array
+                    } else {
+                        randNumber = getRandNumber()
+                        getArray(array, randNumber)
+                    }
+                }
+            }
+
+        })();
+
+    </script>
+</body>
+
+</html>

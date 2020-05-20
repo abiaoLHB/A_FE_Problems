@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去除字符串中最后一个指定的字符</title>
+</head>
+
+<body>
+    <script>
+        (function() {
+            var str = 'abcdefgd99'
+            console.log(delLast(str, 'd'))
+            function delLast(str, del) {
+                if (typeof str !== 'string') {
+                    console('请确认要删除的对象为字符串！');
+                    return false;
+                } else {
+                    let index = str.lastIndexOf(del);
+                    if (index == -1) {
+                        console.log("指定的字符串在当前字符串中不存在")
+                        return false
+                    }
+                    return str.substring(0, index) + str.substring(index + 1, str.length);
+                }
+            }
+
+        } )();
+        (function() {
+            var str = '12345669'
+            console.log(delLast(str, '2'))
+            function delLast(str, del) {
+                if (typeof str !== 'string') {
+                    console('请确认要删除的对象为字符串！');
+                    return false;
+                } else {
+                    return str.split('').reverse().join('').replace(del, '').split('').reverse().join('');
+                }
+            }
+
+        } )();
+    </script>
+</body>
+
+</html>

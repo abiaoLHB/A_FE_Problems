@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局和双飞翼</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            min-width: 550px;
+        }
+
+        #shengbei #header {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background: darkkhaki;
+            text-align: center;
+        }
+
+        #shengbei #container {
+            padding-left: 200px;
+            padding-right: 150px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        #shengbei #container .column {
+            float: left;
+            height: 100%;
+        }
+
+        #shengbei #center {
+            background: orange;
+            width: 100%;
+        }
+
+        #shengbei #left {
+            background: yellow;
+            width: 200px;
+            /* 主要用在浮动元素上，移动到上一个兄弟元素并且也是浮动元素的最左侧 */
+            margin-left: -100%;
+            position: relative;
+            right: 200px;
+        }
+
+        #shengbei #right {
+            background-color: darkcyan;
+            width: 150px;
+            margin-right: -150px;
+        }
+
+
+
+        #shengbei #footer {
+            clear: both;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: darkgray;
+        }
+
+        #shuang {
+            height: 200px;
+        }
+
+        #shuang #header {
+            height: 40px;
+            line-height: 40px;
+            background: darkkhaki;
+            text-align: center;
+        }
+
+        #shuang #container {
+            width: 100%;
+        }
+
+        #shuang .column {
+            float: left;
+            height: 100%;
+        }
+
+        #shuang #center {
+            margin-left: 200px;
+            margin-right: 150px;
+            background: orange;
+
+        }
+
+        #shuang #left {
+            width: 200px;
+            background: yellow;
+            margin-left: -100%;
+        }
+
+        #shuang #right {
+            width: 150px;
+            background-color: darkcyan;
+            margin-left: -150px;
+        }
+
+        #shuang #footer {
+            clear: both;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: darkgray;
+        }
+
+
+
+        #flex #header {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background: darkkhaki;
+            text-align: center;
+        }
+
+        #flex #container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+
+        #flex .column {
+            height: 120px;
+        }
+
+        #flex #left {
+            width: 200px;
+            background-color: yellow;
+            height: 100%;
+        }
+
+        #flex #right {
+            width: 150px;
+            background-color: darkcyan;
+        }
+
+        #flex #center {
+            flex: 1;
+            background: orange;
+        }
+
+        #flex #footer {
+            clear: both;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <p>概述：</p>
+    <p>圣杯布局和双飞翼布局功能时相同，都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局</p>
+    <p>
+        <p>两种方式同时遵循的要点：</p>
+        <ul>
+            <li>两侧宽度固定，中间宽度自适应</li>
+            <li>中间部分在DOM结构上优先，以便先行渲染</li>
+            <li>允许三列中的任意一列成为最高列</li>
+            <li>只需要使用一个额外的div标签</li>
+        </ul>
+    </p>
+    <br>
+    <div id="shengbei">
+        <div id="header">圣杯布局</div>
+        <div id="container">
+            <div id="center" class="column">center</div>
+            <div id="left" class="column">left</div>
+            <div id="right" class="column">right</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+
+    <div id="shuang">
+        <div id="header">双飞翼</div>
+        <div id="container" class="column">
+            <div id="center">center</div>
+        </div>
+        <div id="left" class="column">left</div>
+        <div id="right" class="column">right</div>
+        <div id="footer">footer</div>
+    </div>
+
+    <div id="flex">
+        <div id="header">flex布局</div>
+        <div id="container">
+            <div id="left" class="column">left</div>
+            <div id="center" class="column">center</div>
+            <div id="right" class="column">right</div>
+        </div>
+        <div id="footer">footer</div>
+    </div>
+
+    <div id="des">
+        <p>圣杯技术点</p>
+        <ul>
+            <li>父容器两边用padding留出空间</li>
+            <li>三个元素全部float，用负margin和postion定位</li>
+            <li>用flex也能写</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
