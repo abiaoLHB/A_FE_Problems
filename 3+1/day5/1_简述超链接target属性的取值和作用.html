@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简述超链接target属性的取值和作用</title>
+</head>
+<body>
+    <!-- <a href="https://juejin.im/timeline">我是超链接a</a> -->
+    <!-- <a href="https://juejin.im/timeline" target="_self">我是超链接a</a> -->
+    <!-- <a href="https://juejin.im/timeline" target="_blank">我是超链接a</a> -->
+    <!-- <a href="https://juejin.im/timeline" target="_top">我是超链接a</a> -->
+    <a href="https://juejin.im/timeline" target="_parent">我是超链接a</a>
+
+    <p>
+        <ul>
+            <li>不设置target，在当前页面打开新连接</li>
+            <li>设置target="_self"，在当前页面打开新连接</li>
+            <li>设置target="_blank"，在新窗口（新页签）打开新连接</li>
+            <li>设置target="_top"，在 frame 或者 iframe 中使用较多。直接在顶层的框架中载入目标文档，加载整个窗口</li>
+            <li>设置target="_parent"，在 frame 或者 iframe 中使用较多。在父级框架中载入目标文档，当 a 标签本身在顶层时，与 _self 相同</li>
+        </ul>
+    </p>
+</body>
+</html>

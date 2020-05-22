@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角形</title>
+    <style>
+        .sanjiao{
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid  transparent;
+            border-left: 40px solid  yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="sanjiao">
+
+    </div>
+
+<p>css画三角的核心原理是：border的连接处是已45度斜线分割的，当宽度减少到0，边框挤到一起。然后设置其他三条边为透明，就形成了三角形</p>
+<p>参考连接：http://caibaojian.com/css-border-triangle.html</p>
+</body>
+</html>

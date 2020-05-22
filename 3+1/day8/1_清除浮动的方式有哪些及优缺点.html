@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            background-color:pink;
+            /* overflow: hidden; */
+            /* float: left; */
+        }
+        .box2{
+            width: 50px;
+            height: 50px;
+            background: orange;
+            opacity: 0.5;
+            float: left;
+        }
+        .clearfix {*zoom: 1;}
+        .clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";clear: both;}
+    </style>
+</head>
+<body>
+    <div>参考链接：https://xiangshuo.blog.csdn.net/article/details/52749993</div>
+    <a href="https://xiangshuo.blog.csdn.net/article/details/52749993">参考链接</a>
+    <p>
+        一、什么是盒子塌陷？
+            外部盒子应该包裹住内部的浮动盒子，结果却没有
+    </p>
+
+        <div class="box1 clearfix">
+            <div class="box2">box2</div>
+            <!-- <div style="clear: both;">引入额外多余元素</div> -->
+        </div>
+
+
+        1、父元素跟着浮动：可读性差，不易于维护（别人很难理解为什么要给父元素也添上float），而且可能需要调整整个页面布局。
+        2、在外部盒子内添加带clear属性的空盒子：引入了冗余元素
+        3、外部盒子设置overflow:hidden:可能导致移除元素看不到
+        4、使用伪元素,给外部盒子的after伪元素设置clear属性，再隐藏它
+        5、外部盒子设置固定宽高。兼容性好，但是内容不是自适应的
+</body>
+</html>

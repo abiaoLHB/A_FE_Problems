@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>离线存储</title>
+</head>
+<body>
+<p>参考连接：https://segmentfault.com/a/1190000006984353</p>
+原理：基于一个新建的.appcache文件，通过这个文件上的解析清单离线存储资源。即使网络断线，也可以浏览本地存储的页面信息
+manifest文件：就是.appcache文件
+manifest文件分为三部分：
+一、CACHE_MANIFEST-在此标题下的文件将在首次下载后进行缓存
+二、NETWORK：在比标题下列出的文件需要与服务器连接，并且不会被缓存
+三、FALLBACK：当页面无法访问时的回退页面。
+
+1 CACHE MANIFEST /theme.css /logo.gif /main.js
+NETWORK: login.asp
+NETWORK: *
+ALLBACK：/html5/ /404.html
+
+触发更新缓存：
+1、用户清空浏览器缓存
+2、manifest文件被修改
+3、由程序来更新应用缓存
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+        * \f  匹配换页字符。
+        * \n  匹配换行字符。
+        * \r  匹配回车符字符。
+        * \t  匹配制表字符。
+        * \v  匹配垂直制表符。
+        * @param str
+        * @returns {void | string}
+        */
+        function replaceTableChart(str) {
+            return str.replace(/[\t\n\v\r\f]/g, "")
+        }
+
+        console.log(replaceTableChart(`\t11122233\n_aaaaaaa\r\n_bbbbbb\t_3333333\r_4444444\n_555555`))
+
+
+    </script>
+</body>
+
+</html>

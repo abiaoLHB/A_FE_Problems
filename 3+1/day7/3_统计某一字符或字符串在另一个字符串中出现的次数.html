@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function strCount(str, target) {
+            let count = 0
+            if (!target) return count
+            while (str.match(target)) {
+                str = str.replace(target, '')
+                count++
+            }
+            return count
+        }
+
+        console.log(strCount('abcdef abcdef a', 'f'))
+    </script>
+
+    <script>
+
+        var luoStr = 'ABdafdde'
+        console.log(getCharCount(luoStr,'da'))
+
+        function getCharCount(str, target) {
+            if (!target) {
+                return 0
+            } else {
+                var count = 0
+                while (str.match(target)) {
+                    str = str.replace(target, '')
+                    count++
+                }
+                return count++
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

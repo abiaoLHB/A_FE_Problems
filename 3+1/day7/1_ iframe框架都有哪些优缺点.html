@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    一、优点
+    1、重载页面时不需要重载整个页面，只需要重载页面中的一个框架页，实现异步刷新
+    2、可以实现跨域，没个iframe的源都可以不同
+    3、多页面应用时，对于共同的header、footer可以使用iframe加载
+    二、缺点
+    1、没个iframe都对应着一个页面，也就意味着多余的css、js文件需要引入，增加请求开销
+    2、如果iframe还有滚动条，验证影响用户使用体验
+    3、window.onload事件会在所有iframe加载完成后才出发，造成页面阻塞
+</body>
+</html>

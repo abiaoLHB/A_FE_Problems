@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        BFC 全称“块级格式化上下文”(Block Formatting Context)，对应的还有 IFC。BFC 类似一个“结界”，
+        如果一个 DOM 元素具有 BFC，那么它内部的子元素不会影响外面的元素；外面的元素也不会影响到其内部元素。
+        最常见的例子就是清除 float 的 overflow: hidden; 属性。overflow: hidden; 会触发元素的 BFC，因此其内部的 float 元素不会影响到外部元素的布局。 触发 BFC 的条件： 'html'
+        根元素 float 不为 none overflow 为 auto,scroll,hidden display 的值为 table-cell, table-caption,inline-block 中任何一个 position
+        的值不为 static 和 relative BFC 可以实现更加健壮的自适应布局。
+    </p>
+    <p>下面连个盒子相互影响，导致内部小盒子不居中</p>
+    <div style="width:60px;height:60px;background: pink;">
+        <div style="margin:20px;width:20px;height:20px;background: orange;"></div>
+    </div>
+    <p>对外部盒子采用BFC规则，可以解决问题，方法之一：增加一个overflow：auto样式.由于外部是BFC元素，所以内部盒子会完全居中显示</p>
+    <div style="width:60px;height:60px;background: pink;overflow: auto;">
+        <div style="margin:20px;width:20px;height:20px;background: orange;"></div>
+    </div>
+    <div style="width:60px;height:60px;background: pink;overflow: scroll;">
+        <div style="margin:20px;width:20px;height:20px;background: orange;"></div>
+    </div>
+    <div style="width:60px;height:60px;background: pink;overflow: hidden;">
+        <div style="margin:20px;width:20px;height:20px;background: orange;"></div>
+    </div>
+</body>
+
+</html>
