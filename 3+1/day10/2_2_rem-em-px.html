@@ -60,7 +60,12 @@
 
 <body>
     <div>
-        <span style="color: orange;">px:</span> px是固定单位，标识“”
+        <a href="https://github.com/jawil/blog/issues/21">像素参考链接</a>
+        <span style="color: orange;">px:</span>css规范中，长度单位可以分为两类，绝对单位和相对单位。 px是一个相对单位，相对的是设备像素(device pixel)
+    </div>
+    <div>
+        <a href="https://github.com/jawil/blog/issues/21">像素参考链接</a>
+        <span style="color: orange;">pt:</span>pt在css单位中属于真正的绝对单位，1pt = 1/72(inch),inch及英寸，而1英寸等于2.54厘米
     </div>
     <div>
         <span style="color:orange;">em:</span> em表示相对尺寸，其相对于当前对象内文本的font-size（如果当前对象文本的font-size计量单位也是 em或者未设置，则当前对象文本的font-size的参考对象为父元素文本font-size）
@@ -93,6 +98,10 @@
         six
     </div>
 
+
+    <script>
+        console.log(document.documentElement.clientWidth)
+    </script>
 </body>
 
 </html>
