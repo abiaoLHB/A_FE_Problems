@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 15px;
+        }
+
+        .group_one {
+            width: 4em;
+            height: 10em;
+            /* background-color: pink; */
+        }
+
+        .two {
+            width: 20em;
+            height: 20em;
+            /* background-color: fuchsia; */
+            font-size: 1.4em;
+        }
+
+        .three {
+            width: 10em;
+            height: 10em;
+            /* background: olive; */
+            /* font-size: 1.5em; */
+        }
+
+        .four {
+            width: 10rem;
+            height: 8rem;
+            font-size: 20px;
+            background-color: burlywood;
+        }
+
+        .five {
+            width: 6rem;
+            height: 6rem;
+            /* font-size: 1rem; */
+        }
+
+        .six {
+            font-size: 2rem;
+            width: 20rem;
+            height: 20rem;
+            background-color: olive;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span style="color: orange;">px:</span> px是固定单位，标识“”
+    </div>
+    <div>
+        <span style="color:orange;">em:</span> em表示相对尺寸，其相对于当前对象内文本的font-size（如果当前对象文本的font-size计量单位也是 em或者未设置，则当前对象文本的font-size的参考对象为父元素文本font-size）
+    </div>
+    <div>
+        <span style="color:orange;">em:</span> rem也标识相对尺寸，期参考对象为根元素html的font-size，因此只需要确定这一个font-size。
+    </div>
+
+    <div>
+        <div class="group_one">
+            one
+        </div>
+
+    </div>
+
+    <div class="two">
+        two
+        <div class="three">three</div>
+    </div>
+
+    <div class="four">
+        four
+        <div class="five">
+            five
+            <span style="font-size: 15px;">fiveSpan</span>
+        </div>
+    </div>
+    <span style="font-size: 30px;">six</span>
+    <div class="six">
+        six
+    </div>
+
+</body>
+
+</html>
