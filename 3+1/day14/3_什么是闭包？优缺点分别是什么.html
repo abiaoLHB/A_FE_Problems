@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        当函数可以记住，并且访问所在的词法作用域时，就产生了闭包。即使函数在当前词法作用域之外执行。
+    </div>
+    <script>
+        // function closure() {
+        //     let name = "lhb"
+        //     function closureB() {
+        //         return name
+        //     }
+        //     return closureB()
+        // }
+        // console.log(closure())
+
+
+        // function f(){
+        //     var i= 0;
+        //     console.log(i)
+        // }
+        // f()
+
+
+        // function ff(){
+        //     var i=0
+        //     return function(){
+        //         console.log(i)
+        //     }
+        // }
+        // var fff = ff() //ff()执行完毕，i没有销毁
+        // fff()
+        // fff()
+        // fff()
+
+
+        function f() {
+            var i = 0
+            function f1() {
+                console.log(i)
+            }
+            i = 1
+            return f1
+        }
+        var ff = f()
+        ff()
+
+        ff = null  //销毁闭包
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

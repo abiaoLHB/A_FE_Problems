@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        header,
+        footer,
+        main {
+            display: block;
+        }
+
+        header {
+            position: fixed;
+            height: 50px;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 100%;
+            background-color: darkcyan;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        footer {
+            position: fixed;
+            height: 104px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            line-height: 100px;
+            background-color: darkgrey;
+        }
+
+        main {
+            margin-top: 50px;
+            margin-bottom: 34px;
+            height: 2000px
+        }
+    </style>
+</head>
+
+<body class="layout-fixed">
+    <!-- fixed定位的头部 -->
+    <header>
+        header
+    </header>
+
+    <!-- 可以滚动的区域 -->
+    <main>
+        <ul id="ul">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </main>
+
+    <!-- fixed定位的底部 -->
+    <footer>
+        <input type="text" placeholder="Footer..." />
+        <button class="submit">提交</button>
+    </footer>
+</body>
+
+<script>
+    var dom = document.getElementById("ul")
+    dom.addEventListener('touchstart',function(){
+        console.log("start")
+    })
+    dom.addEventListener('touchmove',function(e){
+        console.log('move')
+    });
+    dom.addEventListener("touchend",function(e){
+        console.log('end')
+    })
+
+</script>
+
+
+<div>
+    iOS-fixed失效问题描述：
+    当页面上有fiexd固定的头部或者footer和input、select元素时，此时吊起软键盘，fixed固定的元素可能跟随页面上下滚动，造成fixed定位失效。
+    解决方案1、isScroll.js 2、让中部的内容不滚动，而是让中部容器里的内容滚动。
+
+</div>
+
+</html>

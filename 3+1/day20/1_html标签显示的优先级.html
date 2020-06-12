@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        html元素显示优先级 帧元素优先级最高，其次是表单元素>非表单元素 即input type="radio" > 普通的a，div
+    </div>
+    <div>
+        有窗口元素 》 大于无窗口元素 。如select
+    </div>
+
+    <select name="pp" id="sele">
+        <option value="a1">a</option>
+        <option value="b1">b</option>
+    </select>
+
+    <script>
+        var ele = document.getElementById("sele")
+        console.log(ele.options[1].value)
+    </script>
+
+</body>
+
+</html>

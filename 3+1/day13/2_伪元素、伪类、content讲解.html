@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demoa:after {
+            -webkit-animation: dot 1.6s linear both;
+        }
+
+        @keyframe dot {
+            0% {
+                content: "."
+            }
+            33% {
+                content: ".."
+            }
+            66% {
+                content: "..."
+            }
+            100% {
+                content: "."
+            }
+        }
+        .demob::after{
+            /* content:url("https://static.ukids.cn/feres/boxshare/quickKnow.png") */
+            content: radial-gradient(circle at 35% 35%, white 10%, pink 70%);
+            display: inline-block;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .democ::after{
+            content: attr(href)
+        }
+        .demod::after{
+            content: attr(class)
+        }
+        .demoe::before{
+            content: open-quote;
+        }
+        .demoe::after{
+            content: close-quote;
+        }
+        .demof{
+            quotes: "《" "》";
+        }
+        .demof:hover{
+            color: orange;
+        }
+        .demof::before{
+            content: open-quote;
+        }
+        .demof::after{
+            content: close-quote;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://github.com/haizlin/fe-interview/issues/39">伪元素参考链接</a>
+    <div>
+        <p>:before和:after</p>
+        <p>1、默认 display：none</p>
+        <p>2、必须设置content属性，否则一切都是无用功，content属性页只能应用在：before和：after上伪元素上</p>
+        <p>3、默认user-select：none。就是：before和：after的内容无法被用户选中</p>
+        <p>4、伪元素可以和伪类集合使用：.target:hover:after</p>
+        <p>5、：before和：after是在css2中提出来的，所以兼容ie8</p>
+        <p>6、：：before和：：after是css3中的写法，为了将伪类和伪元素区分开来</p>
+        <p>7、css中其他伪元素有：：before、：：after、：：first-letter、：：first-line、：：selection</p>
+        <p>8、content的用法 content属性与：：befor及：：after伪元素配合使用，在元素头或者尾部插入生成内容 说明：该属性用于定义元素之前和之后放置的生成内容。默认的，这往往是行内内容，不该内容创建的盒子类型可以用属性display控制
+        </p>
+        <p>9、 content取值：normal、none、'string'、url()、chapter_counter、attr(value string)、open-quote、close-quote、no-open-quote、no-close-quote、 open-quote chapter_counter、inherit  </p>
+        <p>伪类有：:active,:hover,:focus,:visited</p>
+
+
+        <p>otherAnswer</p>
+        <p>:表示伪类，是一种样式，比如:hover, :active等
+                ::表示伪元素，是具体的内容，比如::before是在元素前面插入内容，::after则是在元素后面插入内容，不过需要content配合，并且插入的内容是inline的。
+                :before和:after其实还是表示伪元素，在css3中已经修订为::before和::after了，只是为了能兼容IE浏览器，所以也可以表示成:before和:after</p>
+        <p>
+               lhb 伪类 还是类（class，是一种样式），伪元素还是一种元素（标签）。因为css3之前，伪类和伪元素都是：，为了区分，css3中才有的：：，为了兼容性，伪元素和伪类 都写成一个：也是没问题的
+        </p>
+
+    </div>
+
+    <p>content取值</p>
+    <a class="demoa" href="htts://www.baidu.com">content=string</a>
+    <a class="demob" href="htts://www.baidu.com">content=url</a>
+    <a class="democ" href="htts://www.baidu.com">content=attr-c=</a>
+    <a class="demod" href="htts://www.baidu.com">content=attr-d=</a>
+    <a class="demoe" href="htts://www.baidu.com">content=quote</a>
+    <a class="demof" href="htts://www.baidu.com">自定义引用</a>
+
+
+</body>
+
+</html>

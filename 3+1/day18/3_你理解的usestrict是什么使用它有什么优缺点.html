@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>use strict</title>
+</head>
+<body>
+    <div>严格模式</div>
+    <div>
+        设置严格模式的目的：
+        1、消除js语法的一些不合理，不严谨之处，减少一些怪异行为
+        2、消除代码运行的一些不安全之处，保证代码运行安全
+        3、提高编译器效率，增加运行速度
+        4、为未来新版本js做好铺垫
+    </div>
+
+    <div>
+        常见的几个严格模式
+        1、禁止this关键字指向全局对象
+        2、全局变量必须显示声明
+        3、不允许对arguments赋值。禁止使用arguments.callee
+    </div>
+
+    <script>
+        "use strict"
+
+        console.log(this)
+    </script>
+</body>
+</html>

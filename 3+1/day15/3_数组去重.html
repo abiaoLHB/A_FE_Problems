@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一种写法
+        // var arr = [1, 1, 2, 2]
+        // var newArray = new Set(arr)
+        // console.log(arr)
+        // console.log(newArray)
+
+        // 第二种写法
+        // 将数组降维
+        function resetArray(arr, newArr) {
+            arr.forEach(item => {
+                if (toString.call(item) === "[object Array]") {
+                    resetArray(item, newArr);
+                } else {
+                    newArr.push(item);
+                }
+            })
+        }
+        // 将数组去重
+        function uniArr(arr) {
+            var newArr = [];
+            resetArray(arr, newArr);
+            console.log([...new Set(newArr)]);
+        }
+        arr = [1, 2, 3, [1, 2, [3, 4]], [1]]
+        uniArr(arr);
+    </script>
+</body>
+
+</html>

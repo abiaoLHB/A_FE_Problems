@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        FOUC:样式闪烁、文档样式短暂失效
+    </div>
+    <div>
+        原因:1、使用import方法导入样式表
+        2、将样式表放在页面底部
+        3、有好几个样式表，放在html结构的不同位置
+    </div>
+    <div>原理：当样式表晚于结构性html加载，当加载到此样式表时，页面停止之前的渲染，此样式表被下载和解析后，页面重新
+        渲染，也就出现了短暂的花瓶、闪烁现象
+    </div>
+    <div>
+        解决方法：使用link标签将样式表放在文档head中。
+    </div>
+</body>
+</html>

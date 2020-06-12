@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="" name="top"></a>
+    <ul>
+        <li>start</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+        <li>q</li>
+    </ul>
+    <a href="#top">to top</a>
+    <p id="add" onclick="add()">操作href+#</p>
+    <p  onclick="gotop()">scrollTop</p>
+    <div>
+        <p>返回顶部的方法</p>
+        <p>1、a标签锚点。 需要两个a标签，一个a标签name=xxx，另个一个a标签href=xxx</p>
+        <p>2、在window.href.location后面添加一个#，当url中有多个url时，页面不会有相应</p>
+        <p>3、用js的scrollTop = 0可以返回顶部</p>
+    </div>
+    <script>
+        function add(){
+            var url = window.location.href
+            console.log(url)
+            window.location += '#'
+        }
+        function gotop(){
+            console.log('ppp')
+            document.documentElement.scrollTop = 0
+        }
+
+    </script>
+
+</body>
+</html>

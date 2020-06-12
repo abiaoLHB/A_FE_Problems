@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>property</div>
+        <div>
+            1、是DOM中的属性，是JavaScript里的对象
+            2、可以读取标签自带属性，包括没有写出来的
+            3、不能读取attribute设置的属性
+            4、获取方式 element.property,例如 p.className
+            5、设置element.property = 'xxx' 例如 p.className = 'xxx'
+        </div>
+        <div>attribute</div>
+        <div>
+            1、是HTML标签的属性，即直接在html标签添加的都是attribute属性
+            2、不能读取property设置的属性
+            3、读取方式 element.getAttribute(属性名)，例如 a.getAttribute('href')
+            4、设置方式：element.setAttribute(属性名，属性值)，例如a.setAttribute(href,"https://...")
+            5、直接在html标签上添加的和使用setAttribute添加的情况一致
+        </div>
+    </div>
+
+    <div class="box" style="font-size: 18px;" data-name="xxxx" data-address="wsh">
+        我是box
+    </div>
+
+    <a href="https://www.baidu.com" id="testA" data-pp = "11">测试href</a>
+
+    <script>
+        var dom = document.getElementsByClassName("box")
+        var domFirst = dom[0]
+        console.log(dom)
+        console.log(domFirst)
+        console.log(domFirst.attributes)
+        console.log(domFirst.children)
+        console.log(domFirst.nodeType)
+
+
+    </script>
+
+    <script>
+         var dom = document.getElementsByClassName("box")
+        var domFirst = dom[0]
+        console.log(domFirst.getAttribute("data-name"))
+        console.log(domFirst.getAttribute("data-address"))
+
+        var testA = document.getElementById('testA')
+        console.log(testA)
+        console.log(testA.getAttribute("href"))
+        console.log(testA.getAttribute("data-pp"))
+    </script>
+</body>
+</html>

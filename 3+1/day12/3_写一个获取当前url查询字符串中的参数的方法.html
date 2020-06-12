@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取url中参数的方法</title>
+</head>
+
+<body>
+    <script>
+        // var url = "https://www.baidu.com?data=abc&age=18&sex=man&address=beijing"
+        // function getUrlParams() {
+        //     var search = window.location.search;
+        //     search = search.substr(1, search.length);
+        //     var res = {};
+        //     if (!search) return res;
+        //     console.log(search.split("&"))
+        //     search.split('&').map(item => {
+        //         // es6的结构赋值  var [a,b,c] = [1,2,3]
+        //         var [key, value] = item.split('=');
+        //         res[key] = decodeURIComponent(value);
+        //     });
+        //     return res;
+        // }
+
+        // console.log("参数集合")
+        // console.log(getUrlParams())
+        // console.log("参数集合")
+
+        function getParams(){
+            let search = window.location.search
+            search = search.substr(1,search.length)
+            let reg = {}
+            if(!search) return {}
+            search.split("&").map(item=>{
+                let [key,value] = item.split('=')
+                reg[key] = decodeURIComponent(value)
+            })
+
+            return reg
+        }
+       var params =  getParams()
+        console.log('lhb-参数')
+        console.log(params)
+        console.log('lhb-参数')
+    </script>
+</body>
+
+</html>

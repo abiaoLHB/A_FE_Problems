@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://www.baidu.com" method="GET" id="myform">
+        <input type="text" id="name" placeholder="请输入名称" autocomplete="off"/>
+        <button type="submit">提交</button>
+    </form>
+<!--
+    在部分浏览器上，foucs输入框可以把之前输入过的值自动填入，如果不想自动填入，可以关掉它；
+    autocomplete="off"
+    默认是"on" 开启状态
+
+    一般业务下不会调整 -->
+    <script>
+        function beginSubmit(){
+            console.log("开始提交")
+        }
+
+    </script>
+</body>
+</html>
